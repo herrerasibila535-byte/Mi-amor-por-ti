@@ -1,0 +1,162 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #dcdcdc;
+    --red-goth: #8a0a0a;
+    --gold: #c5a059;
+    --paper: #eaddcf;
+    --ink: #2b1b17;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Crimson Text', serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient(circle, #1a0505 0%, #000000 90%);
+    overflow-x: hidden;
+}
+
+/* Música */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+.music-control:hover {
+    background: var(--red-goth);
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    border-bottom: 2px solid var(--red-goth);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #888;
+    margin-top: -10px;
+}
+
+/* Corazón */
+.heart-section {
+    position: relative;
+    margin: 50px auto;
+    width: 300px;
+}
+.heart-img {
+    width: 100%;
+    filter: drop-shadow(0 0 20px var(--red-goth));
+    animation: latido 3s infinite ease-in-out;
+}
+@keyframes latido {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px var(--red-goth)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 35px #ff0000); }
+}
+
+.label {
+    position: absolute;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+}
+.label.top { top: -20px; left: 50%; transform: translateX(-50%); }
+.label.left { top: 50%; left: -30px; }
+.label.right { top: 50%; right: -30px; }
+
+/* Textos */
+.quote-box {
+    font-size: 1.2rem;
+    color: var(--red-goth);
+    font-style: italic;
+    margin: 30px 0;
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    text-align: left;
+}
+
+.text-content p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Pergamino */
+.scroll-paper {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 40px;
+    position: relative;
+    margin: 40px 0;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    transform: rotate(-1deg);
+}
+.wax-seal {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--red-goth);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #300;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+/* Carta Personal */
+.personal-letter {
+    border: 1px solid #333;
+    padding: 30px;
+    background: rgba(20,20,20,0.8);
+    margin-top: 50px;
+}
+.handwritten {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-top: 30px;
+    color: var(--red-goth);
+}
+
+.divider {
+    font-size: 2rem;
+    color: var(--gold);
+    margin: 40px 0;
+}
+
+footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #555;
+    letter-spacing: 2px;
+}
