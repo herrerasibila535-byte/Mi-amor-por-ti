@@ -1,0 +1,10 @@
+NuestroUniverso/
+│
+├── index.html        (El esqueleto: textos y estructura)
+├── style.css         (El maquillaje: colores, gótico, efectos visuales)
+├── script.js         (El cerebro: animaciones, música, interacciones)
+│
+└── assets/           (Carpeta para tus archivos multimedia)
+    ├── corazon.png   (Tu imagen del corazón)
+    ├── musica.mp3    (Una canción que les guste mucho)
+    └── foto1.jpg     (Opcional: fotos de ustedes)
