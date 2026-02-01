@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title<h1>Mi amado precioso: códice devocional del alma oscura</h1>title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link href=<img src="16382.png" alt="Corazón Gótico" class="imagen-central">
+    
     
     <style>
         :root {
@@ -482,25 +483,4 @@
 -</div>
 +<div class="contenedor-corazon">
 +    <img src="c6eea15a54158f0614066382a027c290.gif" alt="Animación central" class="imagen-central gif-central">
-+</div>+++ b/style.css
-@@
- /* --- Reglas añadidas para el GIF central --- */
- .imagen-central.gif-central {
-     display: block;            /* elimina inline-gap si lo hubiera */
-     width: 250px;              /* conserva el tamaño original (ajusta si quieres) */
-     max-width: 100%;           /* responsive: no desborda en pantallas pequeñas */
-     height: auto;              /* mantiene aspect-ratio (no distorsiona) */
-     object-fit: contain;       /* asegura que el contenido se ajuste sin recortar */
-     position: relative;        /* permite controlar z-index sin alterar flujo */
-     z-index: 0;                /* sube si debe quedar encima (ej.: 1) */
-     filter: drop-shadow(0 0 20px rgba(255,0,0,0.6)); /* opcional: conserva glow */
- }# crear y cambiar a la rama propuesta
-git fetch origin
-git checkout -b replace-central-image-with-gif
-
-# editar index.html: reemplaza el bloque <div class="contenedor-corazon">... como en el diff
-# editar style.css: pega la regla .imagen-central.gif-central como se muestra arriba
-
-git add index.html style.css
-git commit -m "Replace central static image with GIF and add GIF-specific CSS (keep layout/styles intact)"
-git push -u origin replace-central-image-with-gif
++</div>+++ 
