@@ -437,3 +437,35 @@
 <div class="contenedor-corazon">
     <img src="16382.png" alt="Corazón Gótico" class="imagen-central">
 </div>
+            <div class="heart-container">
+    <img src="2e83382968db531bb496a8eef56f9aa6.gif" alt="Corazón Gótico" class="heart-gif">
+</div>
+
+<style>
+    .heart-container {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;
+        padding: 20px 0;
+        background-color: transparent; 
+    }
+
+    .heart-gif {
+        width: 100%;       /* Se adapta al ancho del contenedor */
+        max-width: 300px;  /* Pero no crece más de 300px */
+        height: auto;
+        
+        /* Efecto de resplandor rojo (Glow) */
+        filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.7));
+        
+        /* Animación suave por si quieres que flote un poco */
+        animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
+    }
+</style>
+            
