@@ -25,7 +25,6 @@
         color: var(--text-color);
         font-family: 'Crimson Text', serif;
         line-height: 1.8;
-        /* Patrón de fondo estilo papel tapiz gótico sutil */
         background-image: 
             radial-gradient(circle at center, rgba(139,0,0,0.1) 0%, transparent 80%),
             repeating-linear-gradient(45deg, rgba(20,20,20,1) 0px, rgba(20,20,20,1) 10px, rgba(10,10,10,1) 10px, rgba(10,10,10,1) 20px);
@@ -33,7 +32,6 @@
         min-height: 100vh;
     }
 
-    /* CONTENEDOR PRINCIPAL */
     .container {
         max-width: 680px;
         margin: 40px auto;
@@ -51,7 +49,6 @@
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* TIPOGRAFÍA */
     h1, h2, h3 {
         font-family: 'Cinzel', serif;
         text-transform: uppercase;
@@ -97,24 +94,20 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        /* Efecto de brillo rojo alrededor del corazón */
         filter: drop-shadow(0 0 20px var(--accent-red));
         animation: heartbeat 3s infinite ease-in-out;
     }
 
-    /* CLASE EXTRA PARA LOS GIFS SECUNDARIOS */
+    /* ESTILO PARA LOS GIFS INTERMEDIOS */
     .mid-page-art {
         display: block;
-        margin: 40px auto;
-        max-width: 200px; /* Tamaño controlado para no romper el texto */
+        margin: 50px auto;
+        max-width: 180px;
+        width: 100%;
         height: auto;
         opacity: 0.9;
-        filter: contrast(1.1) drop-shadow(0 0 8px rgba(0,0,0,0.8));
+        filter: contrast(1.1) drop-shadow(0 0 15px rgba(0,0,0,0.8));
         transition: transform 0.3s ease;
-    }
-    
-    .mid-page-art:hover {
-        transform: scale(1.05);
     }
 
     @keyframes heartbeat {
@@ -126,7 +119,6 @@
         100% { transform: scale(1); }
     }
 
-    /* ETIQUETAS FLOTANTES ALREDEDOR DEL CORAZÓN */
     .heart-labels {
         position: absolute;
         width: 100%;
@@ -153,7 +145,6 @@
     .left { top: 50%; left: -20px; transform: translateY(-50%) rotate(-90deg); }
     .right { top: 50%; right: -20px; transform: translateY(-50%) rotate(90deg); }
 
-    /* CITA DESTACADA */
     .emphasized-quote {
         font-family: 'Great Vibes', cursive;
         font-size: 2.1rem;
@@ -165,7 +156,6 @@
         padding: 0 10px;
     }
 
-    /* TEXTO PRINCIPAL */
     .text-block {
         font-size: 1.05rem;
         color: #d0d0d0;
@@ -182,7 +172,6 @@
         font-weight: bold;
     }
 
-    /* DIVISORES ORNAMENTALES */
     .divider {
         text-align: center;
         margin: 50px 0;
@@ -207,7 +196,6 @@
         text-shadow: 0 0 10px rgba(184, 134, 11, 0.8);
     }
 
-    /* SECCIÓN MANUSCRITO (CARTA) */
     .manuscript-scroll {
         background-color: var(--paper);
         color: #2e2e2e;
@@ -221,7 +209,6 @@
         border: 1px solid #c0a080;
     }
 
-    /* Sello de lacre */
     .wax-seal {
         width: 70px;
         height: 70px;
@@ -249,7 +236,6 @@
         text-align: justify;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
         .container { padding: 30px 15px; width: 95%; }
         h1 { font-size: 1.8rem; }
@@ -265,7 +251,7 @@
         <h1>Mi Amado Precioso</h1>
 
         <div class="heart-section">
-            <img src="16426.gif" alt="Corazón Brillante" class="heart-img">
+            <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/c6eea15a54158f0614066382a027c290.gif" alt="Corazón Brillante" class="heart-img">
             
             <div class="heart-labels">
                 <span class="heart-label top">Eternidad</span>
@@ -285,7 +271,7 @@
             <p>Tu presencia no es solo magnética, es fundamental. Me orbitas como un núcleo denso, absoluto, y yo, electrón de alma desbordada, salto de estado al menor roce de tu energía. Entre nosotros no hay distancia que no pueda ser recorrida por el campo inquebrantable de nuestra atracción. Somos un enlace atómico que desafía la desintegración.</p>
         </div>
 
-        <img src="16390.gif" alt="Corazón Anatómico" class="mid-page-art">
+        <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/2e83382968db531bb496a8eef56f9aa6.gif" alt="Corazón Anatómico" class="mid-page-art">
 
         <div class="divider">
             <span class="ornament">𝔄</span>
@@ -299,7 +285,7 @@
             <p>Nos unimos no en la superficie de los cuerpos, sino en la intersección invisible de nuestras esencias, donde los antiguos filósofos decían que habita el alma. Él no me tocó la piel: me tocó el ser. Me encontró en la zona de resonancia donde la vibración de dos espíritus iguales se funde, como dos órbitas que colapsan en una sola existencia.</p>
         </div>
 
-        <img src="16391.gif" alt="Corazón Artístico" class="mid-page-art">
+        <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/73680be6101aea840e76b06876783f9d5f920442/61c297ba1cd3f8f0c81cc882915b3abd%20(1).gif" alt="Corazón Artístico" class="mid-page-art">
 
         <div class="divider">
             <span class="ornament">𝔐</span>
