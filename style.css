@@ -160,3 +160,26 @@ footer {
     color: #555;
     letter-spacing: 2px;
 }
+.contenedor-corazon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background-color: black; /* Fondo negro para que resalte */
+}
+
+.imagen-central {
+    width: 250px; /* Ajusta el tamaño a tu gusto */
+    height: auto;
+    border: 2px solid #330000; /* Borde sutil oscuro */
+    
+    /* Este es el efecto de resplandor rojo de tus fotos */
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.6); 
+    
+    transition: transform 0.3s ease;
+}
+
+.imagen-central:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.8);
+}
