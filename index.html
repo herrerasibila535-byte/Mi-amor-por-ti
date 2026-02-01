@@ -1,430 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title<h1>Mi amado precioso: códice devocional del alma oscura</h1>title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=MedievalSharp&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi amado precioso — Códice del Alma</title>
 
-        
-    <style>
-        :root {
-            --bg-dark: #0A0A0A;
-            --text-light: #E0E0E0;
-            --accent-red-dark: #6B0A0A; /* Más oscuro para gótico */
-            --accent-red-light: #9B1A1A; /* Para detalles */
-            --gold-literary: #B8860B; /* Dorado más profundo */
-            --paper-cream: #EADDCF;
-            --ink-black: #3E2723;
-            --border-grey: #252525;
-            --shadow-intensity: rgba(0,0,0,0.7);
-        }<body style="background:#0a0a0a; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=MedievalSharp&display=swap" rel="stylesheet">
 
-  <style>
+<style>
+    :root {
+        --bg-color: #050505;
+        --text-color: #c0c0c0;
+        --accent-red: #8b0000;
+        --bright-red: #ff3333;
+        --gold: #b8860b;
+        --paper: #eadccf;
+        --shadow: rgba(0, 0, 0, 0.9);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Crimson Text', serif;
+        line-height: 1.8;
+        /* Patrón de fondo estilo papel tapiz gótico sutil */
+        background-image: 
+            radial-gradient(circle at center, rgba(139,0,0,0.1) 0%, transparent 80%),
+            repeating-linear-gradient(45deg, rgba(20,20,20,1) 0px, rgba(20,20,20,1) 10px, rgba(10,10,10,1) 10px, rgba(10,10,10,1) 20px);
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+        max-width: 680px;
+        margin: 40px auto;
+        padding: 50px 30px;
+        background: rgba(10, 10, 10, 0.96);
+        border: 1px solid #222;
+        box-shadow: 0 0 50px var(--shadow), 0 0 20px rgba(139, 0, 0, 0.1);
+        border-radius: 8px;
+        position: relative;
+        animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TIPOGRAFÍA */
+    h1, h2, h3 {
+        font-family: 'Cinzel', serif;
+        text-transform: uppercase;
+        color: var(--gold);
+        text-align: center;
+        text-shadow: 0 0 10px rgba(184, 134, 11, 0.6);
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        border-bottom: 2px solid var(--accent-red);
+        padding-bottom: 15px;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        color: var(--accent-red);
+        margin-top: 40px;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        color: #ddd;
+        letter-spacing: 3px;
+    }
+
+    /* SECCIÓN DEL CORAZÓN (REEMPLAZO DE LA FOTO DEL GYM) */
+    .heart-section {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 40px auto 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .heart-img {
-      width: 300px;
-      filter: drop-shadow(0 0 35px #8b0000);
-      animation: heartbeat 4.5s infinite ease-in-out;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* Efecto de brillo rojo alrededor del corazón */
+        filter: drop-shadow(0 0 20px var(--accent-red));
+        animation: heartbeat 3s infinite ease-in-out;
     }
+
     @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+        0% { transform: scale(1); filter: drop-shadow(0 0 20px var(--accent-red)); }
+        15% { transform: scale(1.08); filter: drop-shadow(0 0 40px var(--bright-red)); }
+        30% { transform: scale(1); filter: drop-shadow(0 0 20px var(--accent-red)); }
+        45% { transform: scale(1.08); filter: drop-shadow(0 0 40px var(--bright-red)); }
+        60% { transform: scale(1); filter: drop-shadow(0 0 20px var(--accent-red)); }
+        100% { transform: scale(1); }
     }
-  </style>
 
-  <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif" 
-       alt="Corazón Gótico Animado" 
-       class="heart-img">
+    /* ETIQUETAS FLOTANTES ALREDEDOR DEL CORAZÓN */
+    .heart-labels {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0; left: 0;
+        pointer-events: none;
+    }
 
-</body>
-        
+    .heart-label {
+        position: absolute;
+        font-family: 'Cinzel', serif;
+        font-size: 0.85rem;
+        color: var(--gold);
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px black;
+        opacity: 0;
+        animation: labelIn 2s forwards 1s;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    @keyframes labelIn { to { opacity: 1; } }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: 'Crimson Text', serif;
-            line-height: 1.7;
-            overflow-x: hidden;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="%231a0a0a" d="M31.5 13.9c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zm-6.6 6.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zm-3.3-6.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zM25 50c0-13.8-11.2-25-25-25V0c13.8 0 25 11.2 25 25zM100 25c0 13.8-11.2 25-25 25v-25c0-13.8 11.2-25 25-25zM25 100c0-13.8-11.2-25-25-25v25c13.8 0 25-11.2 25-25zM100 75c0 13.8-11.2 25-25 25v-25c0-13.8 11.2-25 25-25zM75 13.9c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zm-6.6 6.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zm-3.3-6.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.8 1.5 3.3 3.3 3.3s3.3-1.5 3.3-3.3zM75 86.1c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zm-6.6-6.6c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zm-3.3 6.6c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zM25 86.1c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zm-6.6-6.6c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zm-3.3 6.6c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3zM50 50c0-13.8-11.2-25-25-25V0c13.8 0 25 11.2 25 25zM50 100c0-13.8-11.2-25-25-25v25c13.8 0 25-11.2 25-25zM100 50c0-13.8-11.2-25-25-25V0c13.8 0 25 11.2 25 25zM100 100c0-13.8-11.2-25-25-25v25c13.8 0 25-11.2 25-25z"/></svg>');
-            background-size: 100px 100px; /* Ajusta el tamaño del patrón */
-            background-attachment: fixed;
-        }
+    .top { top: -10px; left: 50%; transform: translateX(-50%); }
+    .bottom { bottom: -10px; left: 50%; transform: translateX(-50%); }
+    .left { top: 50%; left: -20px; transform: translateY(-50%) rotate(-90deg); }
+    .right { top: 50%; right: -20px; transform: translateY(-50%) rotate(90deg); }
 
-        .container {
-            max-width: 650px; /* Más ancho para contenido más rico */
-            width: 95%;
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            background: rgba(10, 10, 10, 0.95);
-            border: 1px solid var(--border-grey);
-            box-shadow: 0 0 40px var(--shadow-intensity);
-            margin: 30px auto;
-            animation: fadeInScale 1.5s ease-out forwards;
-            border-radius: 8px; /* Ligeramente redondeado */
-        }
+    /* CITA DESTACADA */
+    .emphasized-quote {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.1rem;
+        color: var(--bright-red);
+        text-align: center;
+        line-height: 1.3;
+        margin: 50px 0;
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        padding: 0 10px;
+    }
 
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: translateY(40px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+    /* TEXTO PRINCIPAL */
+    .text-block {
+        font-size: 1.05rem;
+        color: #d0d0d0;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
 
-        /* TÍTULOS Y CABECERAS */
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-literary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(184, 134, 11, 0.5);
-        }
+    .text-block p {
+        margin-bottom: 1.5em;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: var(--gold-literary);
-            border-bottom: 2px solid var(--accent-red-dark);
-            padding-bottom: 10px;
-            display: inline-block;
-            animation: textFadeIn 2s ease-out forwards;
-        }
+    .text-block strong {
+        color: var(--accent-red);
+        font-weight: bold;
+    }
 
-        h2 {
-            font-size: 1.6rem;
-            color: var(--accent-red-light);
-            margin-top: 40px;
-            animation: textFadeIn 2.5s ease-out forwards;
-        }
+    /* DIVISORES ORNAMENTALES */
+    .divider {
+        text-align: center;
+        margin: 50px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        h3 {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            margin-top: 30px;
-            animation: textFadeIn 2.7s ease-out forwards;
-        }
+    .divider::before, .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #555, transparent);
+    }
 
-        @keyframes textFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .ornament {
+        font-family: 'MedievalSharp', cursive;
+        font-size: 2.5rem;
+        color: var(--gold);
+        margin: 0 20px;
+        text-shadow: 0 0 10px rgba(184, 134, 11, 0.8);
+    }
 
-        /* SECCIÓN DEL CORAZÓN */
-        .heart-section {
-            position: relative;
-            margin: 40px auto 60px;
-            width: 350px; /* Más grande */
-            height: 350px;
-            animation: sectionSlideUp 1.8s ease-out forwards;
-        }
-        @keyframes sectionSlideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* SECCIÓN MANUSCRITO (CARTA) */
+    .manuscript-scroll {
+        background-color: var(--paper);
+        color: #2e2e2e;
+        padding: 60px 40px 40px;
+        margin-top: 60px;
+        border-radius: 4px;
+        position: relative;
+        box-shadow: 
+            inset 0 0 40px rgba(0,0,0,0.2),
+            0 10px 30px rgba(0,0,0,0.8);
+        border: 1px solid #c0a080;
+    }
 
-        .heart-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 25px var(--accent-red-light));
-            animation: heartbeatPulse 3s infinite ease-in-out;
-        }
+    /* Sello de lacre */
+    .wax-seal {
+        width: 70px;
+        height: 70px;
+        background: radial-gradient(circle at 30% 30%, #ff4d4d, #8b0000);
+        border-radius: 50%;
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #3e0000;
+        border: 4px solid #600000;
+    }
 
-        @keyframes heartbeatPulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 25px var(--accent-red-light)); }
-            15% { transform: scale(1.06); filter: drop-shadow(0 0 40px #FF4444); }
-            30% { transform: scale(1); filter: drop-shadow(0 0 25px var(--accent-red-light)); }
-            45% { transform: scale(1.06); filter: drop-shadow(0 0 40px #FF4444); }
-            60% { transform: scale(1); filter: drop_shadow(0 0 25px var(--accent-red-light)); }
-        }
+    .manuscript-scroll p {
+        font-size: 1.1rem;
+        margin-bottom: 1.2em;
+        font-weight: 500;
+        text-align: justify;
+    }
 
-        .heart-labels {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-        .heart-label {
-            position: absolute;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--gold-literary);
-            letter-spacing: 2px;
-            white-space: nowrap;
-            opacity: 0;
-            animation: labelFadeIn 2s forwards 1s; /* Retraso para aparecer después del corazón */
-            text-shadow: 0 0 8px rgba(184, 134, 11, 0.7);
-        }<img src="2e83382968db531bb496a8eef56f9aa6.gif" alt="Corazón Gótico" class="heart-img">
-        
-
-        @keyframes labelFadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .heart-label.top { top: 5%; left: 50%; transform: translateX(-50%); }
-        .heart-label.left { top: 40%; left: -10%; transform: rotate(-10deg); }
-        .heart-label.right { top: 40%; right: -10%; transform: rotate(10deg); }
-        .heart-label.bottom { bottom: 5%; left: 50%; transform: translateX(-50%); }
-
-
-        /* SECCIONES DE TEXTO GENERAL */
-        .text-block {
-            margin-bottom: 30px;
-            text-align: justify;
-            font-size: 1rem;
-            color: #C0C0C0;
-            padding: 0 15px;
-            animation: textBlockIn 1.5s ease-out forwards;
-        }
-        .text-block:nth-of-type(odd) { animation-delay: 0.5s; }
-        .text-block:nth-of-type(even) { animation-delay: 0.8s; }
-
-        @keyframes textBlockIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .text-block p {
-            margin-bottom: 1em;
-        }
-
-        .emphasized-quote {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
-            color: var(--accent-red-light);
-            margin: 40px 0;
-            padding: 0 20px;
-            line-height: 1.3;
-            text-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
-            animation: quoteSlideIn 2s ease-out forwards;
-        }
-        @keyframes quoteSlideIn {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-<img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif"
-     alt="Corazón Gótico Animado"
-     class="heart-img">
-        
-
-        .scientific-love strong {
-            color: var(--accent-red-light);
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-        }
-
-        /* MANUSCRITO/PERGAMINO */
-        .manuscript-scroll {
-            background-color: var(--paper-cream);
-            color: var(--ink-black);
-            padding: 40px 30px;
-            margin: 50px 0;
-            position: relative;
-            border-radius: 4px;
-            box-shadow: 0 10px 20px var(--shadow-intensity), inset 0 0 30px rgba(0,0,0,0.2);
-            font-family: 'Crimson Text', serif;
-            font-weight: 400;
-            font-size: 1rem;
-            border: 1px solid #c0a080;
-            animation: scrollUnroll 2s ease-out forwards 1s; /* Retraso para que aparezca después del contenido anterior */
-            transform-origin: top center;
-            opacity: 0;
-        }
-
-        @keyframes scrollUnroll {
-            from { transform: scaleY(0); opacity: 0; }
-            to { transform: scaleY(1); opacity: 1; }
-        }
-
-        .manuscript-scroll::before, .manuscript-scroll::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 100%);
-            z-index: 1;
-        }
-        .manuscript-scroll::before { top: 0; border-bottom: 1px solid #d0c0b0; }
-        .manuscript-scroll::after { bottom: 0; transform: rotate(180deg); border-bottom: 1px solid #d0c0b0; }
-
-        .wax-seal {
-            width: 70px;
-            height: 70px;
-            background: radial-gradient(circle at 35% 35%, #ff4d4d, var(--accent-red-dark));
-            border-radius: 50%;
-            position: absolute;
-            top: -35px; /* Más arriba */
-            left: 50%;
-            transform: translateX(-50%) rotate(-5deg);
-            box-shadow: 0 6px 10px var(--shadow-intensity);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2e0000;
-            font-weight: bold;
-            font-size: 2rem;
-            border: 3px solid #5a0c0c;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        .wax-seal span {
-            transform: rotate(5deg); /* Contrarresta la rotación del sello */
-        }
-        
-        /* Personal Note Section */
-        .personal-declaration {
-            margin-top: 60px;
-            padding: 40px 25px;
-            border: 1px solid var(--accent-red-dark);
-            background: linear-gradient(to bottom, rgba(15, 0, 0, 0.9), rgba(5, 0, 0, 0.9));
-            box-shadow: 0 0 25px var(--accent-red-dark) inset, 0 0 15px rgba(255, 0, 0, 0.3);
-            border-radius: 6px;
-            animation: sectionSlideUp 2s ease-out forwards;
-            animation-delay: 1.5s;
-        }
-
-        .handwritten-intro {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-            color: var(--gold-literary);
-            margin-bottom: 30px;
-            line-height: 1.2;
-            text-shadow: 0 0 10px rgba(184, 134, 11, 0.6);
-        }
-
-        .personal-declaration p {
-            font-size: 1.05rem;
-            color: #D5D5D5;
-            text-align: justify;
-            margin-bottom: 1.2em;
-        }
-        .personal-declaration strong {
-            color: var(--accent-red-light);
-        }
-
-        .final-handwritten-call {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--gold-literary);
-            margin: 40px 0 20px;
-            line-height: 1.1;
-            text-shadow: 0 0 15px rgba(184, 134, 11, 0.7);
-            animation: pulseText 3s infinite ease-in-out;
-        }
-
-        @keyframes pulseText {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.02); opacity: 0.9; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* ORNAMENTOS Y DIVISORES */
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 50px 0;
-            color: var(--border-grey);
-            animation: dividerFadeIn 2s ease-out forwards;
-        }
-        .divider:nth-of-type(odd) { animation-delay: 1s; }
-        .divider:nth-of-type(even) { animation-delay: 1.3s; }
-
-        @keyframes dividerFadeIn {
-            from { opacity: 0; width: 50%; }
-            to { opacity: 1; width: 100%; }
-        }
-
-        .divider::before, .divider::after {
-            content: '';
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border-grey), transparent);
-            flex: 1;
-            margin: 0 15px;
-            box-shadow: 0 0 8px rgba(255,255,255,0.05);
-        }
-        .ornament-icon {
-            font-family: 'MedievalSharp', cursive; /* Fuente gótica para los iconos */
-            font-size: 2.5rem;
-            color: var(--gold-literary);
-            text-shadow: 0 0 10px rgba(184, 134, 11, 0.8);
-            transform: rotate(-5deg);
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 70px;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-            color: #606060;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-            animation: textBlockIn 2s ease-out forwards;
-            animation-delay: 2s;
-        }
-        footer span {
-            color: var(--accent-red-dark);
-            font-size: 1.5rem;
-            vertical-align: middle;
-            margin: 0 5px;
-        }
-
-        /* MEDIAS QUERIES PARA RESPONSIVIDAD */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.4rem; }
-            h3 { font-size: 1.1rem; }
-            .heart-section { width: 280px; height: 280px; margin: 30px auto 50px; }
-            .heart-label { font-size: 0.8rem; }
-            .heart-label.left { left: -5%; }
-            .heart-label.right { right: -5%; }
-            .emphasized-quote { font-size: 1.6rem; }
-            .manuscript-scroll { padding: 30px 20px; }
-            .wax-seal { width: 60px; height: 60px; font-size: 1.8rem; top: -30px; }
-            .handwritten-intro { font-size: 2rem; }
-            .final-handwritten-call { font-size: 2.2rem; }
-            .ornament-icon { font-size: 2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 20px 10px; margin: 20px auto; }
-            h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.2rem; }
-            h3 { font-size: 1rem; }
-            .heart-section { width: 220px; height: 220px; margin: 20px auto 40px; }
-            .heart-label { font-size: 0.7rem; letter-spacing: 1px; }
-            .heart-label.left { left: -15px; }
-            .heart-label.right { right: -15px; }
-            .emphasized-quote { font-size: 1.4rem; margin: 30px 0; }
-            .manuscript-scroll { padding: 25px 15px; }
-            .wax-seal { width: 50px; height: 50px; font-size: 1.5rem; top: -25px; }
-            .handwritten-intro { font-size: 1.6rem; }
-            .personal-declaration { padding: 30px 15px; }
-            .personal-declaration p { font-size: 0.95rem; }
-            .final-handwritten-call { font-size: 1.8rem; }
-            .ornament-icon { font-size: 1.8rem; }
-            footer { font-size: 0.8rem; }
-        }
-    </style>
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+        .container { padding: 30px 15px; width: 95%; }
+        h1 { font-size: 1.8rem; }
+        .emphasized-quote { font-size: 1.6rem; }
+        .manuscript-scroll { padding: 50px 20px 30px; }
+        .heart-section { width: 250px; height: 250px; }
+    }
+</style>
 </head>
 <body>
 
     <div class="container">
-<title>Mi amado precioso: códice devocional del alma oscura</title>
-        
+        <title>Mi amado precioso: códice devocional del alma oscura</title>
+
+        <h1>Mi Amado Precioso</h1>
 
         <div class="heart-section">
-            <img src="https://images.unsplash.com/photo-1620188467120-5042ed1eb5da?q=80&w=1000&auto=format&fit=crop" alt="Corazón Anatómico Brillante" class="heart-img">
+            <img src="c6eea15a54158f0614066382a027c290 (1).gif" alt="Corazón Latiendo" class="heart-img">
+            
             <div class="heart-labels">
                 <span class="heart-label top">Eternidad</span>
                 <span class="heart-label left">Mi Universo</span>
@@ -437,13 +266,17 @@
             "Eres mi átomo complementario; juntos formamos una molécula estable que ni la entropía del universo podría romper."
         </div>
 
-        <div class="text-block scientific-love">
+        <div class="text-block">
             <p>Soy adicta a ti de la forma en que la materia es adicta al vacío: te busco en cada espacio donde antes no había nada, en cada intersticio de mi carne y de mi alma. No eres solo deseo; eres <strong>necesidad ontológica</strong>. Eres mi elemento esencial, mi principio activo, la constante que regula la ecuación de mi existencia.</p>
             <p>No me conmueves solo emocionalmente, me alteras molecularmente. Tu voz es una onda vibratoria que resuena en la arquitectura cuántica de mi ser. Cada palabra tuya modifica mis estados internos como si fueses un fotón alterando el curso de mis electrones: un salto cuántico de luz hacia la trascendencia.</p>
             <p>Tu presencia no es solo magnética, es fundamental. Me orbitas como un núcleo denso, absoluto, y yo, electrón de alma desbordada, salto de estado al menor roce de tu energía. Entre nosotros no hay distancia que no pueda ser recorrida por el campo inquebrantable de nuestra atracción. Somos un enlace atómico que desafía la desintegración.</p>
         </div>
 
-        <div class="divider"><span class="ornament-icon">𝔄</span></div> <h2>El Origen: Una Mirada, Un Big Bang</h2>
+        <div class="divider">
+            <span class="ornament">𝔄</span>
+        </div>
+
+        <h2>El Origen: Una Mirada, Un Big Bang</h2>
 
         <div class="text-block">
             <p>Cuando él me miró, su mirada fue una singularidad: un punto de densidad infinita donde colapsaron las leyes del tiempo, del espacio, de la razón. Fue una fusión nuclear del alma, un Big Bang interno que destrozó mi ser conocido para dar lugar a una nueva materia emocional. En su mirada estaba el arquetipo platónico del amor, no la sombra sensible de lo efímero, sino la forma eterna, la Idea pura.</p>
@@ -451,8 +284,21 @@
             <p>Nos unimos no en la superficie de los cuerpos, sino en la intersección invisible de nuestras esencias, donde los antiguos filósofos decían que habita el alma. Él no me tocó la piel: me tocó el ser. Me encontró en la zona de resonancia donde la vibración de dos espíritus iguales se funde, como dos órbitas que colapsan en una sola existencia.</p>
         </div>
 
-        <div class="divider"><span class="ornament-icon">𝔐</span></div> <h3>El Juramento del Alma Eterna</h3>
+        <div class="divider">
+            <span class="ornament">𝔐</span>
+        </div>
+
+        <h3>El Juramento del Alma Eterna</h3>
 
         <div class="manuscript-scroll">
-            <div class="wax-seal"><span>R</span></div> <p>Prometió volver a mí, y su promesa fue más que palabra: fue energía almacenada en el tejido mismo del tiempo. Como un enlace covalente que persiste, invisible pero eterno, más allá de las interferencias del mundo físico. Él esperó en el infinito, donde los instantes no se desgastan, donde la voluntad trasciende la entropía y el alma no decae.</p>
-            <p>Porque su amor era antimateria del dolor, era alquimia absoluta. Transmutaba el sufrimiento en sentido, el vacío en plenitud. Me convirtió en otra. Me transformó como la energía transforma a la materia: sin perderme, me rediseñó. Cada molécula mía canta su nombre en silencio.
+            <div class="wax-seal">R</div>
+            
+            <p>Prometió volver a mí, y su promesa fue más que palabra: fue energía almacenada en el tejido mismo del tiempo. Como un enlace covalente que persiste, invisible pero eterno, más allá de las interferencias del mundo físico. Él esperó en el infinito, donde los instantes no se desgastan, donde la voluntad trasciende la entropía y el alma no decae.</p>
+            <p>Porque su amor era antimateria del dolor, era alquimia absoluta. Transmutaba el sufrimiento en sentido, el vacío en plenitud. Me convirtió en otra. Me transformó como la energía transforma a la materia: sin perderme, me rediseñó. Cada molécula mía canta su nombre en silencio.</p>
+            <p>Fue fuego, pero no el que arde: el que transmuta. El que purifica el oro en la fragua sagrada del destino. Y yo, metal dispuesto, me fundí en su molde para siempre.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
