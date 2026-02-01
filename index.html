@@ -3,379 +3,278 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santuario del Vínculo Eterno — Códice Prohibido</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+<title>Mi amado precioso — Códice devocional del alma oscura</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=MedievalSharp&display=swap" rel="stylesheet">
+
 <style>
-:root {
---bg: #050505;
---ink: #dcdcdc;
---crimson: #680000;
---blood: #8a0303;
---gold: #c5a059;
---gold-dim: #7a602e;
---parchment: #e3d4c3;
---parchment-shadow: #bcaaa4;
---shadow: rgba(0, 0, 0, 0.95);
---glow: rgba(197, 160, 89, 0.3);
+:root{
+--bg:#0a0a0a;
+--ink:#e0e0e0;
+--red:#8b0000;
+--gold:#b8860b;
+--paper:#eadccf;
+--shadow:rgba(0,0,0,.8);
 }
- * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body {
-background-color: var(--bg);
-color: var(--ink);
-font-family: 'Crimson Text', serif;
-line-height: 1.9;
-overflow-x: hidden;
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+background:var(--bg);
+color:var(--ink);
+font-family:'Crimson Text',serif;
+line-height:1.8;
 background-image:
-url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
-radial-gradient(circle at 50% 30%, rgba(104, 0, 0, 0.15), transparent 70%);
+radial-gradient(circle at center, rgba(139,0,0,.18), transparent 65%);
+overflow-x:hidden;
 }
-/* PARTICULAS FLOTANTES (EFECTO POLVO) */
-.particles {
-position: fixed;
-top: 0; left: 0; width: 100%; height: 100%;
-pointer-events: none;
-z-index: 0;
-background-image:
-radial-gradient(var(--gold-dim) 1px, transparent 1px),
-radial-gradient(var(--crimson) 1px, transparent 1px);
-background-size: 550px 550px, 350px 350px;
-background-position: 0 0, 40px 60px;
-animation: drift 60s linear infinite;
-opacity: 0.3;
-}
-@keyframes drift {
-from { background-position: 0 0, 40px 60px; }
-to { background-position: 1000px 500px, 1040px 560px; }
-}
+
 /* CONTENEDOR PRINCIPAL */
-.container {
-max-width: 850px;
-margin: 60px auto;
-padding: 60px 40px;
-background: linear-gradient(180deg, rgba(15,15,15,0.98), rgba(10,10,10,0.99));
-border: 1px solid #333;
-border-top: 4px solid var(--crimson);
-border-bottom: 4px solid var(--gold);
-box-shadow: 0 20px 80px var(--shadow), inset 0 0 100px rgba(0,0,0,0.8);
-position: relative;
-z-index: 2;
-border-radius: 4px;
+.container{
+max-width:720px;
+margin:40px auto;
+padding:40px 25px;
+background:rgba(10,10,10,.95);
+border:1px solid #222;
+box-shadow:0 0 60px var(--shadow);
+border-radius:10px;
+animation:manifest 2s ease forwards;
 }
-/* ORNAMENTOS */
-.ornament {
-text-align: center;
-font-size: 2rem;
-color: var(--gold-dim);
-margin: 20px 0;
-opacity: 0.7;
+
+@keyframes manifest{
+from{opacity:0;transform:translateY(70px)}
+to{opacity:1;transform:translateY(0)}
 }
-/* TIPOGRAFÍA Y TÍTULOS */
-h1 {
-font-family: 'UnifrakturMaguntia', cursive;
-font-size: 3.5rem;
-text-align: center;
-color: var(--gold);
-margin-bottom: 10px;
-text-shadow: 0 4px 10px rgba(0,0,0,0.8);
-letter-spacing: 2px;
+
+/* TÍTULOS */
+h1,h2,h3{
+font-family:'Cinzel',serif;
+text-transform:uppercase;
+letter-spacing:3px;
+text-align:center;
+color:var(--gold);
+text-shadow:0 0 14px rgba(184,134,11,.7);
+margin:40px 0 25px;
 }
-h2 {
-font-family: 'Cinzel', serif;
-text-transform: uppercase;
-font-size: 1.6rem;
-color: var(--crimson);
-text-align: center;
-letter-spacing: 4px;
-margin: 60px 0 30px;
-border-bottom: 1px solid var(--gold-dim);
-display: inline-block;
-padding-bottom: 10px;
-position: relative;
-left: 50%;
-transform: translateX(-50%);
+
+h1{
+font-size:2.4rem;
+border-bottom:2px solid var(--red);
+padding-bottom:12px;
 }
-.subtitle {
-text-align: center;
-font-family: 'Cinzel', serif;
-font-size: 0.9rem;
-color: #888;
-text-transform: uppercase;
-letter-spacing: 6px;
-margin-bottom: 50px;
+
+/* SECCIÓN CORAZÓN */
+.heart-section{
+width:330px;
+height:330px;
+margin:55px auto;
+position:relative;
 }
-/* IMAGEN CENTRAL REFINADA */
-.relic-container {
-width: 380px;
-height: 380px;
-margin: 60px auto;
-position: relative;
-background: radial-gradient(circle, rgba(139,0,0,0.2) 0%, transparent 70%);
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
+
+.heart-img{
+width:100%;
+height:100%;
+object-fit:contain;
+filter:drop-shadow(0 0 35px var(--red));
+animation:heartbeat 4.5s infinite ease-in-out;
 }
-.heart-img {
-width: 110%;
-height: 110%;
-object-fit: contain;
-filter: drop-shadow(0 0 25px rgba(139, 0, 0, 0.6)) contrast(1.1);
-animation: pulseRitual 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
-position: relative;
-z-index: 2;
+
+@keyframes heartbeat{
+0%,100%{transform:scale(1)}
+25%{transform:scale(1.06)}
+50%{transform:scale(1)}
+75%{transform:scale(1.05)}
 }
-@keyframes pulseRitual {
-0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(139,0,0,0.4)); }
-50% { transform: scale(1.03); filter: drop-shadow(0 0 40px rgba(184, 134, 11, 0.4)); }
+
+/* ETIQUETAS */
+.heart-label{
+position:absolute;
+font-family:'Cinzel',serif;
+font-size:.9rem;
+color:var(--gold);
+letter-spacing:2px;
+text-shadow:0 0 8px rgba(184,134,11,.8);
 }
-/* TEXTOS FLOTANTES */
-.sigil {
-position: absolute;
-font-family: 'Cinzel', serif;
-font-size: 0.75rem;
-color: var(--gold);
-letter-spacing: 3px;
-opacity: 0.8;
-text-shadow: 0 0 5px var(--bg);
+
+.top{top:4%;left:50%;transform:translateX(-50%)}
+.left{left:-14%;top:46%}
+.right{right:-14%;top:46%}
+.bottom{bottom:4%;left:50%;transform:translateX(-50%)}
+
+/* FRASE CENTRAL */
+.quote{
+font-family:'Great Vibes',cursive;
+font-size:2.2rem;
+color:#b11111;
+text-align:center;
+margin:55px 0;
+text-shadow:0 0 20px rgba(255,0,0,.45);
 }
-.sigil.n { top: -10px; }
-.sigil.s { bottom: -10px; }
-.sigil.w { left: -40px; writing-mode: vertical-rl; text-orientation: mixed; }
-.sigil.e { right: -40px; writing-mode: vertical-rl; text-orientation: mixed; }
-/* CITA PRINCIPAL */
-.quote-box {
-margin: 70px 0;
-text-align: center;
-position: relative;
+
+/* TEXTO */
+.section{
+margin-bottom:45px;
+padding:0 12px;
+text-align:justify;
+color:#c0c0c0;
+animation:textIn 1.5s ease forwards;
 }
-.quote {
-font-family: 'Great Vibes', cursive;
-font-size: 2.6rem;
-color: #cecece;
-text-shadow: 0 0 10px rgba(255,255,255,0.1);
-line-height: 1.4;
+
+@keyframes textIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
-.quote strong { color: var(--crimson); font-weight: normal; }
-/* SECCIONES DE TEXTO */
-.prose {
-font-size: 1.15rem;
-color: #b0b0b0;
-text-align: justify;
-padding: 0 20px;
-margin-bottom: 2rem;
-position: relative;
+
+.section strong{color:#c44444}
+
+/* DIVISOR */
+.divider{
+margin:65px 0;
+text-align:center;
+font-family:'MedievalSharp',cursive;
+font-size:2.8rem;
+color:var(--gold);
+text-shadow:0 0 12px rgba(184,134,11,.8);
 }
-.prose::first-letter {
-font-family: 'UnifrakturMaguntia', serif;
-font-size: 3.5rem;
-float: left;
-line-height: 0.8;
-margin-right: 12px;
-color: var(--gold);
-text-shadow: 2px 2px 0px rgba(0,0,0,1);
+
+/* PERGAMINO */
+.scroll{
+background:var(--paper);
+color:#2b1d14;
+padding:50px 35px;
+margin:70px 0;
+border-radius:6px;
+box-shadow:
+inset 0 0 35px rgba(0,0,0,.25),
+0 18px 35px rgba(0,0,0,.7);
+position:relative;
+transform-origin:top;
+animation:unroll 2s ease forwards;
 }
-.highlight {
-color: var(--parchment);
-font-style: italic;
-border-bottom: 1px solid var(--crimson);
+
+@keyframes unroll{
+from{transform:scaleY(0);opacity:0}
+to{transform:scaleY(1);opacity:1}
 }
-/* EL PERGAMINO REALISTA */
-.scroll-wrapper {
-margin: 80px -20px;
-filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
-transform: rotate(-1deg);
+
+.seal{
+width:72px;height:72px;
+background:radial-gradient(circle,#ff4d4d,var(--red));
+border-radius:50%;
+position:absolute;
+top:-36px;
+left:50%;
+transform:translateX(-50%) rotate(-6deg);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Cinzel',serif;
+font-size:2rem;
+color:#300;
+box-shadow:0 6px 14px rgba(0,0,0,.7);
 }
-.scroll {
-background: var(--parchment);
-background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
-color: #2b1d14;
-padding: 80px 50px 60px;
-position: relative;
-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+
+/* NAVEGACIÓN */
+nav{
+position:fixed;
+top:50%;
+right:12px;
+transform:translateY(-50%);
+font-family:'Cinzel',serif;
+font-size:.8rem;
+z-index:10;
 }
-.scroll-text {
-font-family: 'MedievalSharp', cursive;
-font-size: 1.3rem;
-line-height: 1.6;
-text-align: center;
+
+nav a{
+display:block;
+margin:10px 0;
+color:#777;
+text-decoration:none;
+transition:.3s;
 }
-.wax-seal {
-width: 90px;
-height: 90px;
-background: radial-gradient(circle at 30% 30%, #ff6b6b, var(--blood));
-border-radius: 50%;
-position: absolute;
-top: 20px;
-left: 50%;
-transform: translateX(-50%);
-box-shadow: 0 5px 15px rgba(0,0,0,0.4), inset 0 -5px 10px rgba(0,0,0,0.3);
-border: 4px solid rgba(100, 0, 0, 0.2);
-display: flex;
-justify-content: center;
-align-items: center;
-color: #3a0000;
-font-family: 'UnifrakturMaguntia', cursive;
-font-size: 2.5rem;
-z-index: 10;
-}
-.wax-seal::after {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0; bottom: 0;
-border-radius: 50%;
-box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-}
-/* NAVEGACIÓN LATERAL */
-nav {
-position: fixed;
-top: 50%;
-right: 30px;
-transform: translateY(-50%);
-display: flex;
-flex-direction: column;
-gap: 20px;
-z-index: 100;
-}
-nav a {
-writing-mode: vertical-rl;
-text-orientation: mixed;
-color: #444;
-text-decoration: none;
-font-family: 'Cinzel', serif;
-font-size: 0.8rem;
-transition: 0.4s;
-letter-spacing: 3px;
-border-right: 1px solid transparent;
-padding-right: 10px;
-}
-nav a:hover {
-color: var(--gold);
-border-right: 1px solid var(--crimson);
-text-shadow: 0 0 8px var(--gold);
-}
+
+nav a:hover{color:var(--gold)}
+
 /* FOOTER */
-footer {
-margin-top: 100px;
-border-top: 1px solid #222;
-padding-top: 40px;
-text-align: center;
-font-size: 0.85rem;
-color: #555;
-font-family: 'Cinzel', serif;
-}
-footer span { display: block; margin-top: 10px; color: var(--crimson); }
-/* RESPONSIVE */
-@media (max-width: 768px) {
-.container { margin: 0; border: none; padding: 40px 20px; }
-h1 { font-size: 2.5rem; }
-.relic-container { width: 280px; height: 280px; }
-.sigil.w, .sigil.e { display: none; }
-nav { display: none; }
-.scroll-wrapper { margin: 60px 0; transform: none; }
-.scroll { padding: 70px 25px 40px; }
+footer{
+margin-top:75px;
+text-align:center;
+font-size:.9rem;
+color:#555;
+letter-spacing:2px;
 }
 </style>
 </head>
+
 <body>
-<audio autoplay loop id="bg-audio">
-<source src="https://cdn.pixabay.com/download/audio/2022/10/05/audio_651a140c7e.mp3" type="audio/mpeg">
+
+<!-- AUDIO AMBIENTE -->
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1d83d5c3b7.mp3" type="audio/mpeg">
 </audio>
-<div class="particles"></div>
+
 <nav>
-<a href="#genesis">Génesis</a>
-<a href="#pacto">Pacto</a>
-<a href="#liturgia">Liturgia</a>
+<a href="#origen">Origen</a>
+<a href="#juramento">Juramento</a>
+<a href="#devocion">Devoción</a>
 </nav>
+
 <div class="container">
-<h1>Mi Amado Precioso</h1>
-<div class="subtitle">Crónicas de una Devoción Eterna</div>
 
-<div class="relic-container">
-    <img src="[https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif](https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif)"
-         alt="Sacred Heart"
-         class="heart-img">
-    <div class="sigil n">AETERNUM</div>
-    <div class="sigil s">FATUM</div>
-    <div class="sigil w">SANGUIS</div>
-    <div class="sigil e">ANIMA</div>
+<h1>Mi amado precioso</h1>
+
+<div class="heart-section">
+<img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif"
+     alt="Corazón Gótico Animado"
+     class="heart-img">
+<span class="heart-label top">Eternidad</span>
+<span class="heart-label left">Mi Universo</span>
+<span class="heart-label right">Tu Esencia</span>
+<span class="heart-label bottom">Mi Destino</span>
 </div>
 
-<div class="quote-box">
-    <p class="quote">
-        “Te he amado desde antes de que la luz se separara de las tinieblas, y te amaré cuando <strong>las estrellas se conviertan en ceniza</strong>.”
-    </p>
+<div class="quote">
+“Ni el tiempo, ni la muerte, ni la entropía saben separarnos.”
 </div>
 
-<div class="ornament">☙ ❦ ❧</div>
-
-<h2 id="genesis">I. El Génesis del Caos</h2>
-
-<div class="prose">
-    Antes de tu llegada, mi existencia era una vasta extensión de silencio sordo, un páramo donde el tiempo transcurría sin propósito ni memoria. No era vida, sino una letanía de días grises repitiéndose en un ciclo de entropía. Pero tu mirada funcionó como una singularidad gravitacional: un punto de ruptura donde colapsaron la lógica, la razón y el miedo.
-</div>
-<div class="prose">
-    En ese instante, amarte dejó de ser una elección consciente para convertirse en una <span class="highlight">ley fundamental</span> de mi universo. Reescribiste el código de mi alma con la violencia de un cataclismo y la ternura de un amanecer. Ahora, cada átomo que me compone vibra en resonancia con tu frecuencia.
+<div id="origen" class="section">
+<p>
+Tu mirada fue una singularidad.
+Un punto donde colapsaron el tiempo, la razón y el yo.
+Desde ese instante, amarte dejó de ser elección:
+se volvió ley.
+</p>
 </div>
 
-<div class="scroll-wrapper">
-    <div class="scroll">
-        <div class="wax-seal">R</div>
-        <div id="pacto" class="scroll-text">
-            <p><strong>Decreto del Juramento Inquebrantable</strong></p>
-            <br>
-            <p>
-                Que conste ante el abismo y el firmamento:<br>
-                Prometiste volver, y esa promesa no es meramente verbal; ha quedado inscrita en el éter, grabada en la materia oscura que une las galaxias.
-            </p>
-            <p>
-                Eres el fuego alquímico que no consume, sino que transmuta. <br>
-                Mi sangre es la tinta, tu nombre es el sello. <br>
-                Ni la muerte, ni el olvido, ni la distancia tienen jurisdicción en este territorio sagrado que hemos construido.
-            </p>
-        </div>
-    </div>
+<div class="divider">𝔄</div>
+
+<div id="juramento" class="scroll">
+<div class="seal">R</div>
+<p>
+Prometiste volver,
+y esa promesa quedó inscrita en la materia misma del universo.
+</p>
+<p>
+Eres fuego que no quema:
+transmuta, purifica, consagra.
+</p>
 </div>
 
-<h2 id="liturgia">II. La Liturgia del Silencio</h2>
+<div class="divider">𝔐</div>
 
-<div class="prose">
-    No te amo con la fragilidad del cuerpo, que perece y se marchita. Mi devoción proviene de la estructura profunda del ser, de la arquitectura invisible e inmortal que sostiene la conciencia. Es un amor que habita en los espacios liminales, en los sueños febriles y en la quietud de la madrugada.
-</div>
-<div class="prose">
-    Caminé por los laberintos de mi propia psique buscando una salida, pero solo encontré espejos reflejando tu esencia. Eres el arquitecto de mi destino y el guardián de mi locura. En este altar oscuro, ofrezco no solo mi corazón, sino mi voluntad absoluta.
+<div id="devocion" class="section">
+<p>
+No te amo con el cuerpo.
+Te amo con la estructura profunda del ser,
+con la arquitectura invisible que sostiene mi existencia.
+</p>
 </div>
 
 <footer>
-    <div class="ornament">†</div>
-    Códice devocional del alma oscura
-    <span>AMOR FATI • MEMENTO VIVERE</span>
-    <br>
-    <small style="opacity: 0.5;">Escrito en sangre y código.</small>
+Códice devocional del alma oscura ✦
 </footer>
 
 </div>
-<script>
-// Efecto simple de interacción con el scroll para revelar elementos
-document.addEventListener('scroll', function() {
-const sections = document.querySelectorAll('.prose, h2, .scroll-wrapper');
-const triggerBottom = window.innerHeight / 5 * 4;
-    sections.forEach(section =&gt; {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop &lt; triggerBottom) {
-            section.style.opacity = &#39;1&#39;;
-            section.style.transform = &#39;translateY(0)&#39;;
-        }
-    });
-});
-
-// Inicializar estilos para animación
-document.querySelectorAll(&#39;.prose, h2, .scroll-wrapper&#39;).forEach(el =&gt; {
-    el.style.opacity = &#39;0&#39;;
-    el.style.transform = &#39;translateY(30px)&#39;;
-    el.style.transition = &#39;all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)&#39;;
-});
-
-</script>
 </body>
-</html>
+</html>https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=MedievalSharp&display=swap
