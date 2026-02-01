@@ -17,7 +17,26 @@
             --ink-black: #3E2723;
             --border-grey: #252525;
             --shadow-intensity: rgba(0,0,0,0.7);
-        }
+        }<body style="background:#0a0a0a; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;">
+
+  <style>
+    .heart-img {
+      width: 300px;
+      filter: drop-shadow(0 0 35px #8b0000);
+      animation: heartbeat 4.5s infinite ease-in-out;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
+
+  <img src="https://raw.githubusercontent.com/herrerasibila535-byte/Mi-amor-por-ti/79d271a41917d2f29d299cc38ee07c632afe3b2d/c6eea15a54158f0614066382a027c290.gif" 
+       alt="Corazón Gótico Animado" 
+       class="heart-img">
+
+</body>
+        
 
         * {
             box-sizing: border-box;
