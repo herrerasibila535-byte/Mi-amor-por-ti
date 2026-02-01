@@ -474,4 +474,33 @@
     
     <img src="61c297ba1cd3f8f0c81cc882915b3abd (1).gif" alt="Corazón Gótico" class="corazon-animado">
             </div>
-            
+            --- a/index.html
++++ b/index.html
+@@
+-<div class="contenedor-corazon">
+-    <img src="16382.png" alt="Corazón Gótico" class="imagen-central">
+-</div>
++<div class="contenedor-corazon">
++    <img src="c6eea15a54158f0614066382a027c290.gif" alt="Animación central" class="imagen-central gif-central">
++</div>+++ b/style.css
+@@
+ /* --- Reglas añadidas para el GIF central --- */
+ .imagen-central.gif-central {
+     display: block;            /* elimina inline-gap si lo hubiera */
+     width: 250px;              /* conserva el tamaño original (ajusta si quieres) */
+     max-width: 100%;           /* responsive: no desborda en pantallas pequeñas */
+     height: auto;              /* mantiene aspect-ratio (no distorsiona) */
+     object-fit: contain;       /* asegura que el contenido se ajuste sin recortar */
+     position: relative;        /* permite controlar z-index sin alterar flujo */
+     z-index: 0;                /* sube si debe quedar encima (ej.: 1) */
+     filter: drop-shadow(0 0 20px rgba(255,0,0,0.6)); /* opcional: conserva glow */
+ }# crear y cambiar a la rama propuesta
+git fetch origin
+git checkout -b replace-central-image-with-gif
+
+# editar index.html: reemplaza el bloque <div class="contenedor-corazon">... como en el diff
+# editar style.css: pega la regla .imagen-central.gif-central como se muestra arriba
+
+git add index.html style.css
+git commit -m "Replace central static image with GIF and add GIF-specific CSS (keep layout/styles intact)"
+git push -u origin replace-central-image-with-gif
